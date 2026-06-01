@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeda_Baca | Toko Buku & Ruang Baca Premium</title>
+    
+    <!-- Google Fonts: Playfair Display (Elegan/Klasik) & Lato (Modern/Readable) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1a3622',   /* Hijau Tua Premium */
+                            light: '#f5f0e6',  /* Krem Hangat */
+                            wood: '#8b5a2b',   /* Coklat Kayu */
+                            accent: '#d4af37', /* Emas untuk Rating/Highlight */
+                            text: '#2d3748'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['Lato', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Menghubungkan ke File CSS Eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body bg-brand-light text-brand-text antialiased">
+
+    <!-- Header & Navigasi -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 py-4" id="navbar">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-brand-dark text-brand-light rounded-lg flex items-center justify-center font-heading font-bold text-xl group-hover:bg-brand-wood transition-colors">
+                        JB
+                    </div>
+                    <span class="font-heading font-bold text-2xl tracking-wide text-brand-dark">Jeda<span class="text-brand-wood">_</span>Baca</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 font-semibold text-brand-dark">
+                    <a href="#beranda" class="hover:text-brand-wood transition-colors">Beranda</a>
+                    <a href="#tentang" class="hover:text-brand-wood transition-colors">Tentang Kami</a>
+                    <a href="#katalog" class="hover:text-brand-wood transition-colors">Katalog Buku</a>
+                    <a href="#booking" class="hover:text-brand-wood transition-colors">Booking</a>
+                    <a href="#kontak" class="hover:text-brand-wood transition-colors">Kontak</a>
+                </nav>
+
+                <!-- CTA Button Header -->
+                <div class="hidden md:block">
+                    <a href="#katalog" class="bg-brand-dark text-brand-light px-6 py-2.5 rounded-full font-bold hover:bg-brand-wood transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Eksplorasi Buku
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-brand-dark text-2xl focus:outline-none" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div class="md:hidden bg-brand-light absolute w-full shadow-lg hidden flex-col divide-y divide-gray-200 border-t border-gray-200" id="mobileMenu">
+            <a href="#beranda" class="p-4 text-center font-semibold text-brand-dark hover:bg-brand-dark hover:text-white transition-colors">Beranda</a>
+            <a href="#tentang" class="p-4 text-center font-semibold text-brand-dark hover:bg-brand-dark hover:text-white transition-colors">Tentang Kami</a>
+            <a href="#katalog" class="p-4 text-center font-semibold text-brand-dark hover:bg-brand-dark hover:text-white transition-colors">Katalog Buku</a>
+            <a href="#booking" class="p-4 text-center font-semibold text-brand-dark hover:bg-brand-dark hover:text-white transition-colors">Booking</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative pt-20 pb-20 md:pt-32 md:pb-32 min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Library Background" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="max-w-3xl text-brand-light">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand-wood/80 backdrop-blur-sm text-sm font-semibold tracking-wider mb-6">
+                    📚 TOKO BUKU & RUANG BACA
+                </span>
+                <h1 class="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 text-white drop-shadow-md">
+                    Jeda Sejenak,<br> <span class="text-brand-accent italic">Selami Dunia Kata.</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-10 text-gray-200 leading-relaxed max-w-2xl font-light">
+                    Temukan ketenangan dan inspirasi di Jeda_Baca. Jelajahi ribuan koleksi buku pilihan kami dalam suasana ruang baca premium yang nyaman dan hangat.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#katalog" class="bg-brand-accent text-brand-dark px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Temukan Buku Favoritmu
+                    </a>
+                    <a href="#booking" class="bg-transparent border-2 border-brand-light text-brand-light px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-brand-light hover:text-brand-dark transition-all duration-300">
+                        Booking Tempat / Buku
+                    </a>
+                </div>
+
+                <!-- Statistik Toko Buku -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-white/20">
+                    <div>
+                        <h3 class="text-3xl font-heading font-bold text-brand-accent">5.000+</h3>
+                        <p class="text-sm text-gray-300">Koleksi Buku</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-heading font-bold text-brand-accent">11</h3>
+                        <p class="text-sm text-gray-300">Kategori Pilihan</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-heading font-bold text-brand-accent">500+</h3>
+                        <p class="text-sm text-gray-300">Pelanggan Aktif</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-heading font-bold text-brand-accent">1.000+</h3>
+                        <p class="text-sm text-gray-300">Booking Berhasil</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image Collage -->
+                <div class="lg:w-1/2 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Reading Room 1" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Reading Room 2" class="rounded-2xl shadow-lg w-full h-64 object-cover mt-8">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-brand-dark p-6 rounded-xl shadow-xl border-4 border-white hidden md:block">
+                        <p class="font-heading text-brand-light text-xl font-bold italic">"Tempat di mana waktu berhenti, dan cerita dimulai."</p>
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="lg:w-1/2">
+                    <h4 class="text-brand-wood font-bold tracking-wider uppercase mb-2">Tentang Jeda_Baca</h4>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold text-brand-dark mb-6 leading-tight">Lebih Dari Sekadar Toko Buku.</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Berdiri sejak 2020, Jeda_Baca lahir dari kecintaan mendalam terhadap literatur & kebutuhan akan ruang kontemplasi di tengah bisingnya kota. Kami menggabungkan konsep toko buku komprehensif dengan ruang baca yang didesain secara ergonomis dan estetis.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                        Koleksi kami dikurasi dengan cermat, mencakup 11 kategori dari fiksi sastra hingga teknologi terkini. Anda dapat membeli buku untuk dibawa pulang, atau memesan tempat untuk menikmatinya ditemani secangkir kopi hangat di sudut baca kami.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-brand-dark font-medium"><i class="fas fa-check-circle text-brand-wood mr-3"></i> Koleksi terkurasi & selalu update</li>
+                        <li class="flex items-center text-brand-dark font-medium"><i class="fas fa-check-circle text-brand-wood mr-3"></i> Ruang baca nyaman & estetik</li>
+                        <li class="flex items-center text-brand-dark font-medium"><i class="fas fa-check-circle text-brand-wood mr-3"></i> Sistem reservasi buku yang mudah</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Koleksi Unggulan Section -->
+    <section class="py-20 bg-brand-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-brand-dark mb-4">Koleksi Unggulan Bulan Ini</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Pilihan terbaik yang paling banyak dicari dan dibicarakan oleh para pembaca setia Jeda_Baca.</p>
+            </div>
+
+            <!-- Asymmetrical Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 h-auto md:h-[600px]">
+                <!-- Featured 1 (Large) -->
+                <div class="md:col-span-2 md:row-span-2 relative group rounded-2xl overflow-hidden shadow-soft cursor-pointer" onclick="openModal('featured-1')">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Featured Book" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-90 transition-opacity group-hover:opacity-100"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <span class="bg-brand-accent text-brand-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Best Seller</span>
+                        <h3 class="text-3xl font-heading font-bold text-white mb-2">The Art of Stillness</h3>
+                        <p class="text-gray-300 mb-4 line-clamp-2">Pico Iyer menelusuri keajaiban dalam berdiam diri di dunia yang terus berlari. Sebuah esai mendalam tentang menemukan ketenangan.</p>
+                        <span class="text-brand-accent font-bold text-xl">Rp 125.000</span>
+                    </div>
+                </div>
+
+                <!-- Featured 2 (Medium) -->
+                <div class="md:col-span-1 md:row-span-1 relative group rounded-2xl overflow-hidden shadow-soft cursor-pointer" onclick="openModal('featured-2')">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Featured Book" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 p-5 w-full">
+                        <span class="bg-white text-brand-dark text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Buku Baru</span>
+                        <h3 class="text-xl font-heading font-bold text-white mb-1">Atomic Habits</h3>
+                        <p class="text-gray-300 text-sm">James Clear</p>
+                    </div>
+                </div>
+
+                <!-- Featured 3 (Medium) -->
+                <div class="md:col-span-1 md:row-span-1 relative group rounded-2xl overflow-hidden shadow-soft cursor-pointer" onclick="openModal('featured-3')">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Featured Book" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 p-5 w-full">
+                         <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Sastra</span>
+                        <h3 class="text-xl font-heading font-bold text-white mb-1">Bumi Manusia</h3>
+                        <p class="text-gray-300 text-sm">Pramoedya A. Toer</p>
+                    </div>
+                </div>
+                
+                <!-- Featured 4 (Medium landscape) -->
+                <div class="md:col-span-2 md:row-span-1 relative group rounded-2xl overflow-hidden shadow-soft cursor-pointer" onclick="openModal('featured-4')">
+                    <img src="https://images.unsplash.com/photo-1614165936126-2ed18e471b3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Featured Book" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full flex justify-between items-end">
+                        <div>
+                            <span class="bg-brand-wood text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Rekomendasi</span>
+                            <h3 class="text-2xl font-heading font-bold text-white mb-1">Sapiens</h3>
+                            <p class="text-gray-300 text-sm">Yuval Noah Harari</p>
+                        </div>
+                        <div class="hidden sm:block text-brand-accent font-bold text-xl">Rp 155.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Eksplorasi Section -->
+    <section id="katalog" class="py-24 bg-white min-h-screen">
+        <div class="container mx-auto px-4 md:px-6">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+                <div>
+                    <h2 class="text-4xl font-heading font-bold text-brand-dark mb-2">Eksplorasi Katalog</h2>
+                    <p class="text-gray-600">Temukan buku dari berbagai kategori yang sesuai dengan minat Anda.</p>
+                </div>
+                <!-- Search Bar -->
+                <div class="w-full md:w-80 relative">
+                    <input type="text" id="searchInput" placeholder="Cari judul atau penulis..." class="w-full pl-12 pr-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-brand-wood focus:ring-1 focus:ring-brand-wood bg-gray-50 transition-colors">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- Category Tabs (Interactive) -->
+            <div class="mb-10 border-b border-gray-200">
+                <div class="flex overflow-x-auto hide-scrollbar gap-2 pb-4" id="categoryTabs">
+                    <!-- Tabs kategori diisi secara dinamis oleh JavaScript -->
+                </div>
+            </div>
+
+            <!-- Book Grid container -->
+            <div id="bookGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Grid card buku diisi secara dinamis oleh JavaScript -->
+            </div>
+            
+            <!-- Empty State (Tampil jika pencarian kosong) -->
+            <div id="emptyState" class="hidden text-center py-20">
+                <i class="fas fa-book-open text-6xl text-gray-300 mb-4"></i>
+                <h3 class="text-2xl font-heading font-bold text-gray-700 mb-2">Buku Tidak Ditemukan</h3>
+                <p class="text-gray-500">Coba gunakan kata kunci lain atau pilih kategori yang berbeda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistem Booking Section -->
+    <section id="booking" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+        <!-- Decorative bg pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16">
+                
+                <!-- CTA Text -->
+                <div class="lg:w-5/12 flex flex-col justify-center">
+                    <span class="text-brand-accent font-bold tracking-widest uppercase mb-4 block">Reservasi Mudah</span>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+                        Temukan Buku Favoritmu dan Booking Sekarang.
+                    </h2>
+                    <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+                        Pastikan buku yang Anda inginkan tersedia sebelum datang. Isi formulir di samping untuk membooking buku atau memesan kursi di ruang baca kami. Kami akan mengonfirmasi via WhatsApp secara otomatis.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-brand-accent mr-4 flex-shrink-0">
+                                <i class="fas fa-calendar-check text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Ambil Kapan Saja</h4>
+                                <p class="text-gray-400 text-sm">Buku dibooking akan disimpan maksimal selama 2x24 jam.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-brand-accent mr-4 flex-shrink-0">
+                                <i class="fas fa-couch text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Baca di Tempat</h4>
+                                <p class="text-gray-400 text-sm">Nikmati suasana tenang dengan fasilitas ruang baca premium.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form Card -->
+                <div class="lg:w-7/12">
+                    <div class="bg-white rounded-2xl p-8 md:p-10 shadow-2xl text-brand-text">
+                        <h3 class="text-2xl font-heading font-bold mb-6 text-brand-dark border-b pb-4">Formulir Pemesanan</h3>
+                        
+                        <form id="bookingForm" onsubmit="handleBooking(event)">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap *</label>
+                                    <input type="text" id="formName" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition" placeholder="Contoh: John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Nomor WhatsApp *</label>
+                                    <input type="tel" id="formWhatsApp" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition" placeholder="Contoh: 0812xxxxxx">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Judul Buku *</label>
+                                <input type="text" id="formBookTitle" required class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition" placeholder="Ketik judul buku atau pilih tombol 'Pesan' di katalog...">
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Jumlah Pesanan *</label>
+                                    <input type="number" id="formQuantity" min="1" value="1" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Tipe Layanan</label>
+                                    <select id="formServiceType" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition bg-white">
+                                        <option>Beli & Ambil di Toko</option>
+                                        <option>Baca di Ruang Baca Jeda</option>
+                                        <option>Kirim via Kurir</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Catatan Tambahan (Opsional)</label>
+                                <textarea id="formNotes" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition resize-none" placeholder="Contoh: Siapkan bungkus kado / tolong rapikan sebelum jam 3 sore."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-dark text-white font-bold text-lg py-4 rounded-xl hover:bg-brand-wood transition-colors duration-300 shadow-md">
+                                Konfirmasi Booking Sekarang
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Pelanggan Section -->
+    <section class="py-20 bg-brand-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-brand-dark mb-4">Kata Mereka</h2>
+                <p class="text-gray-600">Pengalaman nyata para pembaca di ruang Jeda_Baca.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-soft">
+                    <div class="flex text-brand-accent mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Tempat paling nyaman untuk lari dari hiruk pikuk kota. Koleksi novelnya lengkap, dan sistem bookingnya sangat memudahkan saya yang jadwalnya padat."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center font-bold text-gray-600">AR</div>
+                        <div>
+                            <h5 class="font-bold text-brand-dark">Andi R.</h5>
+                            <span class="text-xs text-gray-500">Mahasiswa Sastra</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-soft transform md:-translate-y-4">
+                    <div class="flex text-brand-accent mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Desain interiornya sangat estetik ala perpustakaan klasik Eropa. Kategori Bisnis & Keuangannya punya buku-buku import yang sulit dicari di tempat lain."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-wood text-white flex items-center justify-center font-bold">DS</div>
+                        <div>
+                            <h5 class="font-bold text-brand-dark">Dina S.</h5>
+                            <span class="text-xs text-gray-500">Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-soft">
+                    <div class="flex text-brand-accent mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Area anak-anaknya luar biasa. Anak saya betah berlama-lama baca komik dan buku cerita di sini. Kopinya juga enak!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold">BW</div>
+                        <div>
+                            <h5 class="font-bold text-brand-dark">Budi W.</h5>
+                            <span class="text-xs text-gray-500">Ayah 2 Anak</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Kontak Section -->
+    <footer id="kontak" class="bg-[#112417] text-gray-300 py-16 border-t border-white/10">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-white text-brand-dark rounded-lg flex items-center justify-center font-heading font-bold text-xl">JB</div>
+                        <span class="font-heading font-bold text-2xl tracking-wide text-white">Jeda<span class="text-brand-wood">_</span>Baca</span>
+                    </a>
+                    <p class="mb-6 max-w-sm">Toko buku premium dan ruang baca estetik. Temukan ribuan koleksi buku dalam suasana yang menenangkan jiwa dan pikiran.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 font-heading">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="hover:text-brand-accent transition-colors">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-brand-accent transition-colors">Tentang Kami</a></li>
+                        <li><a href="#katalog" class="hover:text-brand-accent transition-colors">Katalog Buku</a></li>
+                        <li><a href="#booking" class="hover:text-brand-accent transition-colors">Cara Booking</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 font-heading">Kontak & Lokasi</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-brand-accent"></i>
+                            <span>Jl. Literasi No. 99, Senopati, Jakarta Selatan</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-brand-accent"></i>
+                            <span>+62 812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-accent"></i>
+                            <span>halo@jedabaca.com</span>
+                        </li>
+                        <li class="flex items-center gap-3 mt-4 text-sm bg-white/5 p-2 rounded inline-block">
+                            <i class="far fa-clock text-brand-wood"></i> Buka Setiap Hari: 09.00 - 22.00
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-white/10 text-sm">
+                <p>&copy; 2026 Jeda_Baca Bookstore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-40">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal Container (Detail Buku) -->
+    <div id="bookModal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6">
+        <!-- Backdrop transparan hitam -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <!-- Modal Content Box -->
+        <div class="relative modal-content-box bg-white w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col md:flex-row" onclick="event.stopPropagation()">
+            
+            <!-- Close button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-white/80 backdrop-blur md:bg-gray-100 rounded-full flex items-center justify-center text-gray-800 hover:bg-red-500 hover:text-white transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <!-- Book Image Column -->
+            <div class="md:w-2/5 bg-gray-100 relative">
+                <img id="modalCover" src="" alt="Book Cover" class="w-full h-64 md:h-full object-cover">
+                <div id="modalBadge" class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full uppercase text-white shadow"></div>
+            </div>
+
+            <!-- Book Details Column -->
+            <div class="md:w-3/5 p-6 md:p-8 overflow-y-auto hide-scrollbar">
+                <div class="flex items-center gap-2 mb-2 text-sm text-brand-wood font-bold uppercase tracking-wider" id="modalCategory">
+                    Kategori
+                </div>
+                
+                <h2 id="modalTitle" class="text-3xl font-heading font-bold text-brand-dark mb-1">Judul Buku</h2>
+                <p id="modalAuthor" class="text-gray-600 text-lg mb-4">Nama Penulis</p>
+                
+                <div class="flex items-center gap-4 mb-6 pb-6 border-b border-gray-200">
+                    <div class="text-2xl font-bold text-brand-accent" id="modalPrice">Rp 0</div>
+                    <div class="flex items-center text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full" id="modalStatus">
+                        <div class="w-2 h-2 rounded-full bg-green-500 mr-2"></div> Tersedia
+                    </div>
+                    <div class="flex text-brand-accent text-sm items-center gap-1">
+                        <i class="fas fa-star"></i> <span id="modalRating" class="text-gray-700 font-bold">4.5</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold text-brand-dark mb-2">Sinopsis</h4>
+                    <p id="modalSynopsis" class="text-gray-600 leading-relaxed text-sm md:text-base text-justify">
+                        Deskripsi singkat mengenai isi buku akan ditampilkan di sini.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-8 bg-gray-50 p-4 rounded-xl text-sm">
+                    <div>
+                        <span class="block text-gray-500 mb-1">Penerbit / Tahun</span>
+                        <span class="font-semibold text-brand-dark" id="modalYear">2023</span>
+                    </div>
+                    <div>
+                        <span class="block text-gray-500 mb-1">Jumlah Halaman</span>
+                        <span class="font-semibold text-brand-dark" id="modalPages">300 Hal</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button id="modalBookBtn" class="flex-1 bg-brand-dark text-white py-3 rounded-xl font-bold hover:bg-brand-wood transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-bookmark"></i> Pesan / Booking Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menghubungkan ke File JS Eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
